@@ -1,34 +1,23 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import CartItem from "./cartItem";
+import { updateCart, removeCart } from "../actions/index";
 
 class Cart extends Component {
-  showCartItem = cart => {
-    cart.map((value, key) => {
-      const result = value.product;
-      console.log(result.name);
+  showCartItem = () => {
+    return this.props.cart.map((value, key) => {
       return (
-        <tr>
-          <td>{result.name}</td>
-          <td>{result.name}</td>
-          <td title="Quantity">
-            <input
-              type="number"
-              style={{ width: "70px" }}
-              className="my-product-quantity"
-              defaultValue={5}
-            />
-          </td>
-
-          <td>john@example.com</td>
-          <td>
-            <a href="asd">
-              <i className="fa fa-times-circle" />
-            </a>
-          </td>
-        </tr>
+        <CartItem
+          value={value}
+          key={key}
+          cart={this.props.cart}
+          update={this.props.update}
+          remove={this.props.remove}
+        />
       );
     });
   };
+
   render() {
     return (
       <div className="container">
@@ -43,15 +32,30 @@ class Cart extends Component {
               <th>Xóa sản phẩm</th>
             </tr>
           </thead>
-          <tbody>{this.showCartItem(this.props.cart)}</tbody>
+          <tbody>{this.showCartItem()}</tbody>
         </table>
       </div>
     );
   }
 }
+
 const mapStateToProps = state => {
   return {
     cart: state.cart
   };
 };
-export default connect(mapStateToProps)(Cart);
+const mapDispatchToProps = dispatch => {
+  return {
+    update: (product, quantity) => {
+      dispatch(updateCart(product, quantity));
+    },
+    remove: product => {
+      dispatch(removeCart(product));
+    }
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Cart);

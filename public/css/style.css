@@ -39,6 +39,10 @@ input#exampleInputEmail1 {
   height: 45px;
   background: #f7fbffed;
 }
+button {
+  border: none;
+  background: white;
+}
 ul {
   margin: 0;
   padding: 0;
