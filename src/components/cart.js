@@ -17,6 +17,24 @@ class Cart extends Component {
       );
     });
   };
+  showTotalAmount = cart => {
+    var total = 0;
+    // console.log(cart[1].product.price);
+    for (var i = 0; i < cart.length; i++) {
+      total += cart[i].product.price * cart[i].quantity;
+      // console.log(total);
+      console.log("TCL: CartItem -> total", total);
+    }
+    return (
+      <tr>
+        <td>Thành tiền</td>
+        <td />
+        <td />
+        <td>{total}</td>
+        <td />
+      </tr>
+    );
+  };
 
   render() {
     return (
@@ -33,6 +51,7 @@ class Cart extends Component {
             </tr>
           </thead>
           <tbody>{this.showCartItem()}</tbody>
+          <tbody>{this.showTotalAmount(this.props.cart)}</tbody>
         </table>
       </div>
     );

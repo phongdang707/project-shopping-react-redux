@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import CartResult from "./cartResult";
+// import CartResult from "./cartResult";
 
 class CartItem extends Component {
   constructor(props) {
@@ -26,7 +26,15 @@ class CartItem extends Component {
       // console.log(total);
       console.log("TCL: CartItem -> total", total);
     }
-    return <CartResult total={total} />;
+    return (
+      <tr>
+        <td>Thành tiền</td>
+        <td />
+        <td />
+        <td>{total}</td>
+        <td />
+      </tr>
+    );
   };
   render() {
     return (
