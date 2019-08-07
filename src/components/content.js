@@ -5,7 +5,36 @@ import { connect } from "react-redux";
 
 class Content extends Component {
   render() {
-    const ContentElm = this.props.products.map((product, index) => {
+    let { products } = this.props;
+    var filterProduct = [];
+
+    // console.log(this.props.filter.filterType);
+    // console.log(this.props.filter.filterValue);
+    switch (this.props.filter.filterType) {
+      case "status":
+        if (parseInt(this.props.filter.filterValue, 10) === -1) {
+          filterProduct = products;
+          break;
+        } else {
+          for (let item of products) {
+            if (item.status === this.props.filter.filterValue) {
+              console.log("vào elese");
+              filterProduct = [...filterProduct, item];
+            }
+          }
+        }
+        break;
+
+      case "":
+        filterProduct = products;
+        break;
+      default:
+        break;
+    }
+    console.log(filterProduct);
+    const ContentElm = filterProduct.map((product, index) => {
+      console.log("trong ren", filterProduct);
+
       return <ContentItem key={index} product={product} />;
     });
     return (
@@ -33,7 +62,8 @@ class Content extends Component {
 }
 const mapStateToProps = state => {
   return {
-    products: state.data
+    products: state.data,
+    filter: state.filter
   };
 };
 

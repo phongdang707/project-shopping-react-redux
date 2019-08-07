@@ -10,6 +10,7 @@ const INITIAL_STATE = [
     kg: 1,
     rating: 1,
     price: 15,
+    status: 1,
     description:
       "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable."
   },
@@ -19,6 +20,7 @@ const INITIAL_STATE = [
     name: "Sunflower Oil",
     kg: 5,
     rating: 3,
+    status: 1,
     price: 10,
     description:
       "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable."
@@ -29,6 +31,7 @@ const INITIAL_STATE = [
     name: "Sunflower Oil",
     kg: 5,
     rating: 3,
+    status: 2,
     price: 10,
     description:
       "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable."
@@ -39,6 +42,7 @@ const INITIAL_STATE = [
     name: "Soya Chunks",
     kg: 5,
     rating: 3,
+    status: 1,
     price: 2,
     description:
       "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable."
@@ -48,6 +52,7 @@ const INITIAL_STATE = [
     img: "images/of2.png",
     name: "phong",
     kg: 1,
+    status: 1,
     rating: 1,
     price: 15,
     description:
@@ -58,6 +63,7 @@ const INITIAL_STATE = [
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     default:
+      // localStorage.setItem("DATA", JSON.stringify(state));
       return state;
   }
 };

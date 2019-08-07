@@ -59,27 +59,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
   <!--- start-rate---->
   <script src="%PUBLIC_URL%/js/jstarbox.js"></script>
   <link rel="stylesheet" href="%PUBLIC_URL%/css/jstarbox.css" type="text/css" media="screen" charset="utf-8" />
-  <script type="text/javascript">
-    jQuery(function () {
-      jQuery('.starbox').each(function () {
-        var starbox = jQuery(this);
-        starbox.starbox({
-          average: starbox.attr('data-start-value'),
-          changeable: starbox.hasClass('unchangeable') ? false : starbox.hasClass('clickonce') ? 'once' : true,
-          ghosting: starbox.hasClass('ghosting'),
-          autoUpdateAverage: starbox.hasClass('autoupdate'),
-          buttons: starbox.hasClass('smooth') ? false : starbox.attr('data-button-count') || 5,
-          stars: starbox.attr('data-star-count') || 5
-        }).bind('starbox-value-changed', function (event, value) {
-          if (starbox.hasClass('random')) {
-            var val = Math.random();
-            starbox.next().text(' ' + val);
-            return val;
-          }
-        })
-      });
-    });
-  </script>
+
   <!---//End-rate---->
 </head>
 
@@ -96,6 +76,36 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
 </body>
+<script type="text/javascript">
+  jQuery(function () {
+    jQuery('.starbox').each(function () {
+      var starbox = jQuery(this);
+      starbox.starbox({
+        average: starbox.attr('data-start-value'),
+        changeable: starbox.hasClass('unchangeable') ? false : starbox.hasClass('clickonce') ? 'once' : true,
+        ghosting: starbox.hasClass('ghosting'),
+        autoUpdateAverage: starbox.hasClass('autoupdate'),
+        buttons: starbox.hasClass('smooth') ? false : starbox.attr('data-button-count') || 5,
+        stars: starbox.attr('data-star-count') || 5
+      }).bind('starbox-value-changed', function (event, value) {
+        if (starbox.hasClass('random')) {
+          var val = Math.random();
+          starbox.next().text(' ' + val);
+          return val;
+        }
+      })
+    });
+  });
+</script>
+<script>
+  $(document).ready(function () {
+    $('ul li').click(function () {
+      $('li').removeClass("active");
+      $(this).addClass("active");
+    });
+  });
+</script>
 
 </html>

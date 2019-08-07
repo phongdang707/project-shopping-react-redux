@@ -21,3 +21,10 @@ export const removeCart = product => {
     product
   };
 };
+export const filter = (filterType, filterValue) => {
+  return {
+    type: types.FILTER,
+    filterType,
+    filterValue
+  };
+};

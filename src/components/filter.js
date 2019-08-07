@@ -1,34 +1,58 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { filter } from "../actions/index";
 
 class Filter extends Component {
   render() {
     return (
       <nav className="nav-sidebar">
-        <ul className="nav tabs ">
-          <li className="active">
-            <a href="#tab1" data-toggle="tab">
-              Staples
-            </a>
+        <ul className="nav tabs">
+          <li
+            className="li active"
+            onClick={this.props.filter.bind(this, "status", -1)}
+          >
+            Tất cả
           </li>
-          <li className="">
-            <a href="#tab2" data-toggle="tab">
-              Snacks
-            </a>
+          <li
+            className="li"
+            onClick={this.props.filter.bind(this, "status", 1)}
+          >
+            Staples
           </li>
-          <li className="">
-            <a href="#tab3" data-toggle="tab">
-              Fruits &amp; Vegetables
-            </a>
+          <li
+            className="li"
+            onClick={this.props.filter.bind(this, "status", 2)}
+          >
+            Snacks
           </li>
-          <li className="">
-            <a href="#tab4" data-toggle="tab">
-              Breakfast &amp; Cereal
-            </a>
+          <li
+            className="li"
+            onClick={this.props.filter.bind(this, "status", 3)}
+          >
+            Fruits
+          </li>
+          <li
+            className="li"
+            onClick={this.props.filter.bind(this, "status", 4)}
+          >
+            Breakfast
           </li>
         </ul>
       </nav>
     );
   }
 }
+const mapDispatchToProps = dispatch => {
+  return {
+    filter: (filterType, filterValue) => {
+      console.log(filterType);
+      console.log(filterValue);
 
-export default Filter;
+      dispatch(filter(filterType, filterValue));
+    }
+  };
+};
+export default connect(
+  null,
+  mapDispatchToProps
+)(Filter);

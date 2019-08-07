@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
-class TotalCartItem extends Component {
+class TotalCartIte extends Component {
   render() {
-    return <div>TotalCartItem</div>;
+    return <div>TotalCartIte</div>;
   }
 }
 
-export default TotalCartItem;
+export default TotalCartIte;

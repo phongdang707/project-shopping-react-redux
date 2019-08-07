@@ -39,6 +39,9 @@ input#exampleInputEmail1 {
   height: 45px;
   background: #f7fbffed;
 }
+li:hover {
+  cursor: pointer;
+}
 button {
   border: none;
   background: white;
@@ -3322,4 +3325,10 @@ i.fa.fa-times-circle {
   font-size: 30px;
   margin-left: 51px;
   color: #b92222;
+}
+.active {
+  color: black;
+}
+li.li {
+  margin-right: 15px;
 }
