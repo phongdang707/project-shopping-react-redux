@@ -30,6 +30,7 @@ function Header() {
                   Wishlist
                 </a>
               </li>
+
               {!isAuthenticated && (
                 <li>
                   <Link to="/" onClick={() => loginWithRedirect({})}>
@@ -38,7 +39,9 @@ function Header() {
                   </Link>
                 </li>
               )}
-
+              {isAuthenticated && (
+                <button onClick={() => logout()}>Log out</button>
+              )}
               <li>
                 <a href="register.html">
                   <i className="fa fa-arrow-right" aria-hidden="true" />

@@ -28,3 +28,9 @@ export const filter = (filterType, filterValue) => {
     filterValue
   };
 };
+export const addNewProduct = product => {
+  return {
+    type: types.ADD_NEW_PRODUCT,
+    product
+  };
+};

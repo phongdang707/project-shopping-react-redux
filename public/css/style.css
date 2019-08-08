@@ -2906,6 +2906,12 @@ span.last {
   .ring-in {
     width: 34%;
   }
+
+  button.btn.btn-primary.phong {
+    position: relative;
+    top: -6px;
+    width: 50%;
+  }
   .add-1 {
     padding: 7px 4px;
     font-size: 0.9em;
