@@ -20,7 +20,6 @@ export const Auth0Provider = ({
   useEffect(() => {
     const initAuth0 = async () => {
       const auth0FromHook = await createAuth0Client(initOptions);
-      console.log(auth0FromHook)
       setAuth0(auth0FromHook);
 
       if (window.location.search.includes("code=")) {
@@ -65,7 +64,7 @@ export const Auth0Provider = ({
     setIsAuthenticated(true);
     setUser(user);
   };
-  console.log(auth0Client)
+  // if(!auth0Client) return <div/>;
   return (
     <Auth0Context.Provider
       value={{

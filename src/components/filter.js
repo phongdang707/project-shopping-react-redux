@@ -45,9 +45,8 @@ class Filter extends Component {
 const mapDispatchToProps = dispatch => {
   return {
     filter: (filterType, filterValue) => {
-      console.log(filterType);
-      console.log(filterValue);
-
+      // console.log(filterType);
+      // console.log(filterValue);
       dispatch(filter(filterType, filterValue));
     }
   };

@@ -12,7 +12,7 @@ export default (state = INITIAL_STATE, action) => {
         filterType: action.filterType,
         filterValue: action.filterValue
       };
-      console.log("====================================");
+      console.log("======filter==============================");
       console.log(state);
       console.log("====================================");
       return { ...state };

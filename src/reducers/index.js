@@ -1,11 +1,11 @@
 import { combineReducers } from "redux";
 import cart from "./cart";
 import data from "./data";
+import adminProduct from "./adminProduct";
 import filter from "./filter";
-import addNewProduct from "./addNewProduct";
 
 const allReducer = combineReducers({
-  addNewProduct,
+  adminProduct,
   filter,
   cart,
   data

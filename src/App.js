@@ -11,19 +11,20 @@ import Index from "./components/admin/index";
 
 // import { privateRoutes, publicRoutes } from "./routes";
 import { useAuth0 } from "./react-auth0-wrapper";
-function App() {
+function App(props) {
   const { isAuthenticated } = useAuth0();
+  if (isAuthenticated) props.history.push("/admin");
   return (
     <div className="App">
       <BrowserRouter>
-        <Route exact path="/" component={Header} />
+        <Header />
         <Route exact path="/" component={Banner} />
         <Route exact path="/" component={Content} />
         <Route exact path="/home" component={Content} />
         <Route exact path="/itemDetail/:slug.:id.html" component={itemDetail} />
         <Route exact path="/cart" component={Cart} />
-        <Route exact path="/" component={Fashion} />
-        <Route exact path="/" component={Footer} />
+        <Fashion />
+        <Footer />
         <Route exact path="/admin" component={Index} />
       </BrowserRouter>
     </div>

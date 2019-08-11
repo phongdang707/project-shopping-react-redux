@@ -6,25 +6,31 @@ import { connect } from "react-redux";
 class Content extends Component {
   render() {
     let { products } = this.props;
+    console.log("TCL: Content -> render -> products", products)
     var filterProduct = [];
-
+    
     // console.log(this.props.filter.filterType);
     // console.log(this.props.filter.filterValue);
+    console.log(
+      "TCL: Content -> render -> this.props.filter.filterValue",
+      this.props.filter.filterValue
+    );
+
     switch (this.props.filter.filterType) {
       case "status":
         if (parseInt(this.props.filter.filterValue, 10) === -1) {
           filterProduct = products;
+
           break;
         } else {
           for (let item of products) {
-            if (item.status === this.props.filter.filterValue) {
+            if (item.product.status === this.props.filter.filterValue) {
               console.log("vào elese");
               filterProduct = [...filterProduct, item];
             }
           }
         }
         break;
-
       case "":
         filterProduct = products;
         break;

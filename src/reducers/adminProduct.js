@@ -1,11 +1,11 @@
 import * as types from "../actions/actionType";
-import data from "./data";
-
-const INITIAL_STATE = data ? data : [];
+var jsonCart = JSON.parse(localStorage.getItem("ADMIN"));
+const INITIAL_STATE = jsonCart ? jsonCart : [];
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case types.ADD_NEW_PRODUCT:
+    case types.SHOW_ADMIN:
+      localStorage.setItem("ADMIN", JSON.stringify(state));
       return { ...state };
     default:
       return state;

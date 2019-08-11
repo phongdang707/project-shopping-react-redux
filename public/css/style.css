@@ -3338,3 +3338,25 @@ i.fa.fa-times-circle {
 li.li {
   margin-right: 15px;
 }
+img.img-banner {
+  width: 100%;
+}
+
+li.li {
+  margin-right: 12px;
+}
+li {
+  list-style: none;
+}
+img.img_admin {
+  width: 20%;
+}
+button.btn.phong {
+  background-color: #28a745;
+  border-color: #28a745;
+  color: white;
+  margin-top: 12px;
+}
+input#customFile {
+  margin-top: 15px;
+}

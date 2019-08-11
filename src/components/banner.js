@@ -17,7 +17,7 @@ class Banner extends Component {
                   placeholder="Search..."
                 />
               </div>
-              <button type="submit" className="btn btn-primary">
+              <button type="submit" className="btn btn-primary la">
                 <i className="fa fa-search" /> Search
               </button>
             </form>

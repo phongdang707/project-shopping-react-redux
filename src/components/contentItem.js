@@ -53,7 +53,7 @@ class ContentItem extends Component {
                 data-target="#myModal1"
                 className="offer-img"
               >
-                <img src={product.img} className="img-responsive" alt="" />
+                <img src={product.product.img} className="img-responsive" alt="" />
                 <div className="offer">
                   <p>
                     <span>Offer</span>
@@ -66,13 +66,13 @@ class ContentItem extends Component {
                     <Link
                       to={
                         "/itemDetail/" +
-                        this.chuyenDoiURL(product.name) +
+                        this.chuyenDoiURL(product.product.name) +
                         "." +
                         product.id +
                         ".html"
                       }
                     >
-                      {product.name}({product.kg} kg)
+                      {product.product.name}({product.product.kg} kg)
                     </Link>
                   </h6>
                 </div>
@@ -80,7 +80,7 @@ class ContentItem extends Component {
                   <div className="col-2">
                     <p>
                       {/* <label>${this.props.product.price}</label> */}
-                      <em className="item_price">${product.price}</em>
+                      <em className="item_price">${product.product.price}</em>
                     </p>
                   </div>
                   <div className="">
@@ -89,12 +89,12 @@ class ContentItem extends Component {
                   <div className="clearfix" />
                 </div>
                 <ul className="rating">
-                  <li> {this.showRating(product.rating)}</li>
+                  <li> {this.showRating(product.product.rating)}</li>
                 </ul>
                 <div className="add">
                   <button
                     className="btn btn-danger my-cart-btn my-cart-b "
-                    data-image={product.img}
+                    data-image={product.product.img}
                     onClick={() => {
                       this.props.addToCart(product, 1);
                     }}

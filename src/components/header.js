@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useAuth0 } from "../react-auth0-wrapper";
 
-function Header() {
+function Header(props) {
+  console.log(props.history);
   const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
   return (
     <div>
@@ -126,21 +127,3 @@ function Header() {
 }
 
 export default Header;
-
-// src/components/NavBar.js
-
-// const NavBar = () => {
-//   const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
-
-//   return (
-//     <div>
-//       {!isAuthenticated && (
-//         <button onClick={() => loginWithRedirect({})}>Log in</button>
-//       )}
-
-//       {isAuthenticated && <button onClick={() => logout()}>Log out</button>}
-//     </div>
-//   );
-// };
-
-// export default NavBar;

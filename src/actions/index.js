@@ -34,3 +34,8 @@ export const addNewProduct = product => {
     product
   };
 };
+export const showAdmin = () => {
+  return {
+    type: types.SHOW_ADMIN
+  };
+};

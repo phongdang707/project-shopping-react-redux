@@ -4,7 +4,7 @@ import ContentItem from "./contentItem";
 
 class Content extends Component {
   showItem = () => {
-    return this.props.data.map((value, key) => {
+    return this.props.adminProduct.map((value, key) => {
       return <ContentItem value={value} key={key} />;
     });
   };
@@ -57,7 +57,7 @@ class Content extends Component {
 }
 const mapStateToProps = state => {
   return {
-    data: state.data
+    adminProduct: state.adminProduct
   };
 };
 export default connect(
